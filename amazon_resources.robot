@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
+${BROWSER}           chrome 
 ${URL}               http://www.amazon.com.br
 ${MENU_PRINCIPAL}    //a[@href='/Livros/b/?ie=UTF8&node=6740748011&ref_=nav_cs_books'][contains(.,'Livros')]
 ${HEADER_LIVROS}     //h1[contains(.,'Loja de Livros')]
@@ -11,7 +12,7 @@ ${RESULTADO}         search
 
 *** Keywords ***
 Abrir o navegador
-    Open Browser    browser=chrome
+    Open Browser    browser=${BROWSER}
     Maximize Browser Window
 
 Fechar o navegador
