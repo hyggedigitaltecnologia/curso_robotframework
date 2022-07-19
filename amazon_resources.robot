@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 ${BROWSER}           chrome
 ${URL}               http://www.amazon.com.br
 ${MENU_PRINCIPAL}    //a[@href='/Livros/b/?ie=UTF8&node=6740748011&ref_=nav_cs_books'][contains(.,'Livros')]
-${HEADER_LIVROS}     //h1[contains(.,'Loja de Livros')]
+${HEADER_LIVROS}     //h2[contains(.,'Lojas em destaque')]
 ${CAMPO_PESQUISA}    twotabsearchtextbox
 ${BOTAO_PESQUISA}    nav-search-submit-button
 ${RESULTADO}         search
@@ -44,3 +44,26 @@ Clicar no botão de pesquisa
 
 Verificar o resultado da pesquisa se esta listando o produto "${PRODUTO}"
     Wait Until Element Is Visible    locator=(//span[contains(.,'${PRODUTO}')])[3]
+
+# GHERKIN STEPS
+Dado que estou na home page da Amazon.com.br
+    Acessar a home page do site Amazon.com.br
+
+Quando acessar o menu "Livros"
+    Entrar no menu "Livros"
+
+Então o título da página deve ficar "Livros | Amazon.com.br"
+    Verificar se o título da página fica "Livros | Amazon.com.br"
+
+E o texto "Lojas em destaque" deve ser exibido na página
+    Verificar se aparece a frase "Lojas em destaque"
+
+E a categoria "Livros Geek" deve ser exibida na página
+    Verificar se aparece a categoria "Livros Geek"
+
+Quando pesquisar pelo produto "Xbox Series S"
+    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+
+Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
+    Verificar o resultado da pesquisa se esta listando o produto "Console Xbox Series S"

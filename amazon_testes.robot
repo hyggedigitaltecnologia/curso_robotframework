@@ -11,7 +11,7 @@ Caso de Teste 01 - Acesso ao menu "Livros"
     [Tags]             menus    categorias
     Acessar a home page do site Amazon.com.br
     Entrar no menu "Livros"
-    Verificar se aparece a frase "Loja de Livros"
+    Verificar se aparece a frase "Lojas em destaque"
     Verificar se o título da página fica "Livros | Amazon.com.br"
     Verificar se aparece a categoria "Livros Geek"
 
